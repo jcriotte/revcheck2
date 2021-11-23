@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Film {{ film.title }}</h1>
+    <p>{{ film.id }}. {{ film.title }}</p>
+    <p>description : {{ film.description }}</p>
+    <p>Année : {{ film.year }}</p>
+    <a href="/films/edit?id={{ film.id }}">Edit</a>
+    <form action="/films/delete" method="POST">
+        <input type="hidden" name="id" value="{{ film.id }}">
+        <button>Delete</button>
+    </form>
+    <a href="/films">Back</a>
+{% endblock %}

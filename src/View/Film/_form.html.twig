@@ -1,0 +1,32 @@
+{# TODO : manage errors display #}
+
+<form method="post">
+	<input type="hidden" value="{{ film.id }}" name="id">
+	<label for="title">Saisir le titre du film :
+	</label>
+	<input type="text" value="{{ film.title }}" name="title">
+	<label for="title">Saisir la description du film :
+	</label>
+	<input type="text" value="{{ film.description }}" name="description">
+	<label for="title">Saisir l'année de sortie du film :
+	</label>
+	<input type="text" value="{{ film.year }}" name="year">
+	<label for="categoryId">choisissez une catégorie :
+	</label>
+
+	<select name="categoryId" id="categoryId">
+		<option value="">--Please choose an option--</option>
+		{% for category in categorys %}
+			{% if film.categoryId == category.id %}
+				<option value="{{ category.id }}" selected="selected">{{ category.name }}</option>
+			{% else %}
+				<option value="{{ category.id }}">{{ category.name }}</option>
+			{% endif %}
+		{% endfor %}
+	</select>
+	<input type="submit" value="Valider">
+
+</form>
+{% for error in errors %}
+	<p>{{ error }}</p>
+{% endfor %}

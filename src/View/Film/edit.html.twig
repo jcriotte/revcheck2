@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit film {{ film.title }}</h1>
+    {% include 'Film/_form.html.twig' %}
+    <a href="/films/show?id={{ film.id }}">Back</a>
+{% endblock %}

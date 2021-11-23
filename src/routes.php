@@ -13,4 +13,8 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'films' => ['FilmController', 'index',],
+    'films/add' => ['FilmController', 'add',],
+    'films/show' => ['FilmController', 'show', ['id']],
+    'films/edit' => ['FilmController', 'edit', ['id']],
 ];
